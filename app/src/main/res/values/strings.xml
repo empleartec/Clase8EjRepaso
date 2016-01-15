@@ -26,5 +26,7 @@
     <string name="schedule_2">Tue &amp; Fri 2-3</string>
     <string name="schedule_3">Wed &amp; Fri 4-5</string>
     <string name="schedule_4">Mon &amp; Wed 3-4</string>
+    <string name="action_share_discipline">Share</string>
+    <string name="action_search_discipline">Search Discipline</string>
 
 </resources>
