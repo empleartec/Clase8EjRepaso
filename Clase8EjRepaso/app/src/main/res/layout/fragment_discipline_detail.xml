@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detailBg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:id="@+id/layoutCosasLocas"
+        android:background="#da8c6a">
+        <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imagendedeportedetalle"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/titulodetail"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imagendedeportedetalle"
+            android:layout_toEndOf="@+id/imagendedeportedetalle"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="14dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/leveldetail"
+            android:layout_below="@+id/titulodetail"
+            android:layout_alignLeft="@+id/titulodetail"
+            android:layout_alignStart="@+id/titulodetail" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/precio"
+            android:textColor="#ff0000"
+            android:layout_below="@+id/horariodetail"
+            android:layout_alignLeft="@+id/horariodetail"
+            android:layout_alignStart="@+id/horariodetail" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/horariodetail"
+            android:layout_alignTop="@+id/imagendedeportedetalle"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/layoutCosasLocas"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Dada una disciplina, mostrar los detalles en este fragment"
+            android:id="@+id/detalle"
+            android:layout_below="@+id/layoutCosasLocas"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#5a5656" />
+    </ScrollView>
+
+
+</RelativeLayout>

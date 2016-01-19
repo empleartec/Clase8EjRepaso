@@ -1,0 +1,51 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:background="@color/listBg"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="@dimen/list_item_icon_size"
+        android:layout_height="@dimen/list_item_icon_size"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_gaming"
+        android:id="@+id/imagendedeporte"/>
+    <LinearLayout
+        android:layout_marginLeft="@dimen/list_item_titles_left_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/list_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/disc_gaming"
+            android:textColor="#000000" />
+        <TextView
+            android:id="@+id/list_item_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:text="Level: 2"
+            android:textColor="#000000" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/list_item_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/schedule_2"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="#8e524d4d" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/darker_gray"/>
+</RelativeLayout>
