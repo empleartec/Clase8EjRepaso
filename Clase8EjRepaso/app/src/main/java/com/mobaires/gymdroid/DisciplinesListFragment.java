@@ -37,8 +37,10 @@ public class DisciplinesListFragment extends Fragment {
     public void armarLista(List<Discipline> disciplinas) {
 
         ListView lista = (ListView) getView().findViewById(R.id.disciplinasLista);
-        ListDisciplinasAdapter listaAdaptada = new ListDisciplinasAdapter(this, disciplinas);
-        lista.setAdapter(listaAdaptada);
+        //ListDisciplinasAdapter listaAdaptada = new ListDisciplinasAdapter(this, disciplinas);
+        //lista.setAdapter(listaAdaptada);
+        ((ListDisciplinasAdapter)lista.getAdapter()).setDisciplinas(disciplinas);
+        ((ListDisciplinasAdapter)lista.getAdapter()).notifyDataSetChanged();
     }
 
     public interface OnDisciplineSelectedListener {

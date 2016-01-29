@@ -2,7 +2,6 @@ package com.mobaires.gymdroid;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -18,6 +17,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements DisciplinesListFragment.OnDisciplineSelectedListener {
 
+    private Discipline mSelectedDiscipline;
+    public static final String SELECTED_DISCIPLINE = "SELECTED_DISCIPLINE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +28,21 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        if (savedInstanceState!=null) {
+            if (savedInstanceState.containsKey(SELECTED_DISCIPLINE)) {
+                mSelectedDiscipline
+                        = savedInstanceState.getParcelable(SELECTED_DISCIPLINE);
+            }
+        }
 
+        if (mSelectedDiscipline!=null) {
+            onDisciplineSelected(mSelectedDiscipline);
+        }
     }
 
     @Override
     public void onDisciplineSelected(Discipline discipline) {
+        mSelectedDiscipline = discipline;
         // TODO - if a discipline is selected, we should do something with it (show it maybe?)
         /* TODO - Si una disciplina se selecciona, debemos hacer algo con ella, como mostrarla en
                   otro fragment o abrir un nuevo activity.. */
@@ -42,9 +54,15 @@ public class MainActivity extends AppCompatActivity
         } else {
             Intent intent = new Intent (this,DetailActivity.class);
             intent.putExtra("disciplina",discipline);
-            startActivity(intent);}
+            startActivity(intent);
+        }
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("SELECTED_DISCIPLINE", mSelectedDiscipline);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

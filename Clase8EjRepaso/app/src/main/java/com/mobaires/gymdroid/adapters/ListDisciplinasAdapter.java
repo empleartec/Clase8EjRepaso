@@ -21,7 +21,7 @@ import java.util.List;
 public class ListDisciplinasAdapter extends BaseAdapter {
 
     private final Fragment context;
-    private final List<Discipline> disciplinas;
+    private List<Discipline> disciplinas;
     private DisciplinesListFragment listener;
 
     public ListDisciplinasAdapter(Fragment context, List<Discipline> disciplinas){
@@ -30,6 +30,10 @@ public class ListDisciplinasAdapter extends BaseAdapter {
         this.disciplinas = disciplinas;
         this.listener =(DisciplinesListFragment) context;
 
+    }
+
+    public void setDisciplinas(List<Discipline> disciplinas) {
+        this.disciplinas = disciplinas;
     }
 
     @Override
